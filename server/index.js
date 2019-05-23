@@ -14,8 +14,8 @@ app.use(
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.post('/convert', (req, res) => {
-  const formData = req.body.json;
-  console.log(formData);
+  const formDataString = JSON.stringify(req.body.json);
+  res.send(formDataString);
 });
 
 const PORT = process.env.PORT || 3000;
