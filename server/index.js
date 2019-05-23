@@ -1,12 +1,21 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+
 app.use(express.static(path.join(__dirname, '../client')));
 
-app.get('/', function(req, res) {
-  res.send('CSV Report Generator is served.');
+app.post('/convert', (req, res) => {
+  const formData = req.body.json;
+  console.log(formData);
 });
 
 const PORT = 3000;
