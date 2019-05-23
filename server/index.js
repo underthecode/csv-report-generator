@@ -18,7 +18,7 @@ app.post('/convert', (req, res) => {
   console.log(formData);
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`CSV Report Generator is listening on ${PORT}`);
 });
