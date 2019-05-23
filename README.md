@@ -2,7 +2,7 @@
 
 ## try it out!
 
-- not quite ready... in the mean time, dance to [this](https://youtu.be/XMmUXamntPI) :smiley:
+- convert some JSON to CSV [here](https://underthecode-csv-report-gen.herokuapp.com/) :smiley:
 
 ## requirements
 
