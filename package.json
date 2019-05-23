@@ -1,0 +1,19 @@
+{
+  "name": "csv-report-generator",
+  "version": "1.0.0",
+  "description": "deployed client-server app that generates CSV reports from JSON data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/underthecode/csv-report-generator.git"
+  },
+  "author": "underthecode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/underthecode/csv-report-generator/issues"
+  },
+  "homepage": "https://github.com/underthecode/csv-report-generator#readme"
+}
