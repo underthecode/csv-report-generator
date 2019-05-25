@@ -2,6 +2,7 @@ const express = require('express');
 const index = require('./index');
 const path = require('path');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 
@@ -15,13 +16,22 @@ app.use(
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.post('/convert', (req, res) => {
+  // console.log('REQ BODY', req.body.json);
   const formDataString = JSON.parse(req.body.json);
-  console.log(typeof formDataString);
+  console.log(formDataString);
   index.controller.convertCSV(formDataString, (err, csvData) => {
     if (err) {
       throw err;
     } else {
-      res.send(csvData);
+      const file = path.join(__dirname, '../client/json.txt');
+      fs.writeFile(file, csvData, err => {
+        if (err) {
+          throw err;
+        } else {
+          console.log('JSON has been saved!');
+        }
+      });
+      res.send();
     }
   });
 });
