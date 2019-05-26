@@ -4,7 +4,7 @@ $(document).ready(() => {
     fileReader.onload = event => {
       $.post('convert', { json: event.target.result }, () => {
         $('.download').append(
-          '<a href="http://127.0.0.1:3000/json.txt" download>Download CSV</a>'
+          '<a href="http://localhost:3000/json.txt" download>Download CSV</a>'
         );
       });
     };
