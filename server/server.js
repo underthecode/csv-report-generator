@@ -16,9 +16,7 @@ app.use(
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.post('/convert', (req, res) => {
-  // console.log('REQ BODY', req.body.json);
   const formDataString = JSON.parse(req.body.json);
-  console.log(formDataString);
   index.controller.convertCSV(formDataString, (err, csvData) => {
     if (err) {
       throw err;

@@ -1,9 +1,9 @@
 $(document).ready(() => {
-  $(document).on('change', '#upload', event => {
+  $(document).on('change', '.upload', event => {
     const fileReader = new FileReader();
     fileReader.onload = event => {
-      $.post('convert', { json: event.target.result }, (data, stat) => {
-        $('body').append(
+      $.post('convert', { json: event.target.result }, () => {
+        $('.download').append(
           '<a href="http://127.0.0.1:3000/json.txt" download>Download CSV</a>'
         );
       });
