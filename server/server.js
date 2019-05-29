@@ -13,7 +13,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.post('/convert', (req, res) => {
   const formDataString = JSON.parse(req.body.json);
@@ -21,7 +21,7 @@ app.post('/convert', (req, res) => {
     if (err) {
       throw err;
     } else {
-      const file = path.join(__dirname, '../client/json.txt');
+      const file = path.join(__dirname, '../client/public/json.txt');
       fs.writeFile(file, csvData, err => {
         if (err) {
           throw err;
