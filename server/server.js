@@ -1,8 +1,7 @@
 const express = require('express');
-const index = require('./index');
 const path = require('path');
 const bodyParser = require('body-parser');
-const fs = require('fs');
+const routes = require('./routes/index');
 
 const app = express();
 
@@ -15,24 +14,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '../client/public')));
 
-app.post('/convert', (req, res) => {
-  const formDataString = JSON.parse(req.body.json);
-  index.controller.convertCSV(formDataString, (err, csvData) => {
-    if (err) {
-      throw err;
-    } else {
-      const file = path.join(__dirname, '../client/public/json.txt');
-      fs.writeFile(file, csvData, err => {
-        if (err) {
-          throw err;
-        } else {
-          console.log('JSON has been saved!');
-        }
-      });
-      res.send();
-    }
-  });
-});
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
