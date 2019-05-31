@@ -2,7 +2,7 @@
   "name": "csv-report-generator",
   "version": "1.0.0",
   "description": "deployed client-server app that generates CSV reports from JSON data",
-  "main": "index.js",
+  "main": "./client/public/index.js",
   "engines": {
     "node": "12.3.1",
     "npm": "6.9.0"
