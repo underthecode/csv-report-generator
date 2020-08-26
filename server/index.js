@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/', routes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`CSV Report Generator is listening on ${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}`);
 });
