@@ -2,11 +2,11 @@
 
 ## try it out!
 
-- convert some JSON to CSV [here](https://underthecode-csv-report-gen.herokuapp.com/) :smiley:
+- convert JSON [here](https://underthecode-csv-report-gen.herokuapp.com/) :smiley:
 
 ## requirements
 
-#### a single-page app that generates CSV reports from JSON data file, where:
+#### single-page app that generates CSV from JSON, where:
 
 - Express serves up an index.html file and its associated assets
 - client app submits JSON data to server && receives a response containing a CSV-formatted result
