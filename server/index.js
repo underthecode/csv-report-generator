@@ -12,8 +12,8 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
+app.use(express.static(path.join(__dirname, '../client/dist/')));
+app.use(express.static(path.join(__dirname, '../client/src/')));
 app.use('/', routes);
 
 const port = process.env.PORT || 3000;
