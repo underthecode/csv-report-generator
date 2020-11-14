@@ -11,12 +11,12 @@ router.post('/convert', (req, res) => {
     if (err) {
       throw err;
     } else {
-      const file = path.join(__dirname, '../../client/public/json.txt');
+      const file = path.join(__dirname, '../../client/dist/json.csv');
       fs.writeFile(file, csvData, (err) => {
         if (err) {
           throw err;
         } else {
-          console.log('JSON has been saved');
+          console.log('JSON processed');
         }
       });
       res.send();
