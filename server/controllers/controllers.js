@@ -1,4 +1,4 @@
-const models = require('../models/index');
+const models = require('../models/models');
 
 const convertCSV = (formDataString, callback) => {
   const csvData = models.generateCSV(formDataString);

@@ -1,8 +1,8 @@
-// HELPER FUNC to flatten nested JSON
-const flattenJSON = data => {
+// flatten nested JSON
+const flattenJSON = (data) => {
   const result = {};
 
-  function traverseJSON(cur, prop) {
+  const traverseJSON = (cur, prop) => {
     if (Object(cur) !== cur) {
       result[prop] = cur;
     } else if (Array.isArray(cur)) {
@@ -20,19 +20,19 @@ const flattenJSON = data => {
       }
       if (isEmpty && prop) result[prop] = {};
     }
-  }
+  };
 
   traverseJSON(data, '');
   return result;
 };
 
-// HELPER FUNC to parse out CSV fields
+// parse out CSV fields
 const parseCSVField = (flatData, start = 0, end = 6) => {
   const csvFields = Object.keys(flatData);
   return csvFields.slice(start, end).join();
 };
 
-// HELPER FUNC to parse out CSV rows
+// parse out CSV rows
 const parseCSVData = (flatData, chunk = 6) => {
   const csvData = Object.values(flatData);
   let row;
@@ -45,8 +45,8 @@ const parseCSVData = (flatData, chunk = 6) => {
   return csvRows.join('\n');
 };
 
-// HELPER FUNC to combine fieldsData + rowData
-const generateCSV = data => {
+// combine fieldsData + rowData
+const generateCSV = (data) => {
   const flatData = flattenJSON(data);
   const fieldsData = parseCSVField(flatData);
   const rowData = parseCSVData(flatData);
