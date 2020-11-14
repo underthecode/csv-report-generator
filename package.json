@@ -1,7 +1,7 @@
 {
   "name": "csv-report-generator",
   "version": "1.0.0",
-  "description": "single-page app that generates CSV reports from JSON data file",
+  "description": "single-page app that generates CSV from JSON",
   "main": "./server/index.js",
   "scripts": {
     "dev": "nodemon server/server.js",
