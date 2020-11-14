@@ -4,7 +4,7 @@
   "description": "single-page app that generates CSV reports from JSON data file",
   "main": "./server/index.js",
   "scripts": {
-    "start:dev": "nodemon server/server.js",
+    "dev": "nodemon server/server.js",
     "start": "node server/server.js"
   },
   "repository": {
