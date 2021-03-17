@@ -6,7 +6,7 @@
 
 ## requirements
 
-#### single-page app that generates CSV from JSON, where:
+#### generates a CSV from JSON, where:
 
 - Express serves up an index.html file and its associated assets
 - client app submits JSON data to server && receives a response containing a CSV-formatted result
