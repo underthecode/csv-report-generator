@@ -10,6 +10,7 @@ const flattenJSON = (data) => {
 
       for (let i = 0, l = cur.length; i < l; i++)
         traverseJSON(cur[i], prop + '[' + i + ']');
+
       if (l === 0) result[prop] = [];
     } else {
       let isEmpty = true;
@@ -18,7 +19,10 @@ const flattenJSON = (data) => {
         isEmpty = false;
         traverseJSON(cur[p], prop ? prop + '.' + p : p);
       }
-      if (isEmpty && prop) result[prop] = {};
+
+      if (isEmpty && prop) {
+        result[prop] = {};
+      }
     }
   };
 
